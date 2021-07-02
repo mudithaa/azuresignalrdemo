@@ -23,3 +23,11 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.4.0
+      with:
+      # Name of the Azure Function App
+        app-name: 'mudis-function-demo-one'
+      # Path to package or folder. *.zip or a folder to deploy
+        #package: # optional, default is .
+    
