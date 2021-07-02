@@ -30,6 +30,7 @@ jobs:
           app_location: "SignalRAngularClient" # App source code path
           api_location: "SignalRFunctionApp" # Api source code path - optional
           output_location: "dist/SignalRAngularClient" # Built app content directory - optional
+          app_build_command: 'ng build --prod'
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
