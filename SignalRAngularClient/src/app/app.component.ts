@@ -3,6 +3,7 @@ import * as signalR from "@microsoft/signalr";
 import { Message } from './message';
 import { HubConnection } from "@microsoft/signalr";
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.connection = new signalR
     .HubConnectionBuilder()
-    .withUrl("http://localhost:7071/api/")
+    .withUrl(environment.apiEndpointUrl)
     .build();
 
     this.connection.start()
@@ -49,8 +50,9 @@ export class AppComponent {
     body.Target = "newMessage";
     body.Message = data;
     
+    const apiUrl = environment.apiEndpointUrl + "SignalRSendMessage"
     this.http
-    .post("http://localhost:7071/api/SignalRSendMessage", body)
+    .post(apiUrl, body)
     .subscribe(
       (data: any) => {
         //console.log(`Func Hub sendMessage: ${data}`)
