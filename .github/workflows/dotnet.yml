@@ -33,7 +33,7 @@ jobs:
       with:
       # Name of the Azure Function App
         app-name: 'mudis-function-demo-one'
-        package: '*\SignalRFunctionApp'
+        package: 'SignalRFunctionApp\'
         #publish-profile: ${{ secrets.PUBLISH_PROFILE }}
       # Path to package or folder. *.zip or a folder to deploy
         #package: # optional, default is .
