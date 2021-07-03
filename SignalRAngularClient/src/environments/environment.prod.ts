@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpointUrl:"https://azuresignalrdemo.muditha.dev/api/"
+  apiEndpointUrl:"https://mudis-function-demo-one.azurewebsites.net/api/"
 };
