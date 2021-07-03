@@ -9,7 +9,7 @@ namespace SignalRFunctionApp
     {
         [FunctionName("negotiate")]
         public static SignalRConnectionInfo Negotiate(
-            [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
             [SignalRConnectionInfo(HubName = "mudischat")] SignalRConnectionInfo connectionInfo)
         {
             return connectionInfo;
